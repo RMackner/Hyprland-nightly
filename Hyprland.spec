@@ -1,7 +1,11 @@
+%define githash 10303259f7c6f3e64e74e9ca8a31d4223071d5f0
+
+%define shorthash %(c=%{githash}; echo ${c:0:10})
+
 %define githash2 221ee83d440fb7dcbfd141ef3a459a5a973331b6
 
 Name:           Hyprland
-Version:        nightly
+Version:        1.git.%{shorthash}%{?dist}
 Release:        %autorelease
 Summary:        Dynamic tiling Wayland compositor that doesn't sacrifice on its looks.
 
@@ -9,7 +13,7 @@ Summary:        Dynamic tiling Wayland compositor that doesn't sacrifice on its 
 # subprojects/wlroots is MIT
 License:        BSD-3-Clause and MIT
 URL:            https://github.com/hyprwm/Hyprland
-Source0:        %{url}/archive/refs/heads/main.zip
+Source0:        %{url}/archive/%{githash}/%{name}-%{githash}.tar.gz
 Source1:        https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/%{githash2}/wlroots-%{githash2}.tar.gz
 
 BuildRequires:  meson
@@ -72,13 +76,13 @@ very flexible IPC model allowing for a lot of customization, and more.
 
 
 %prep
-%autosetup -n %{name}-main
+%autosetup -n %{name}-%{githash}
 cd /builddir/build/BUILD
 /usr/bin/tar xvf /builddir/build/SOURCES/wlroots-%{githash2}.tar.gz
 cd wlroots-%{githash2}
 /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
 cd /builddir/build/BUILD
-cp -r ./wlroots-%{githash2}/* ./%{name}-main/subprojects/wlroots/
+cp -r ./wlroots-%{githash2}/* ./%{name}-%{githash}/subprojects/wlroots/
 
 %build
 meson -Dprefix=%{_prefix} -Dbuildtype=release _build
