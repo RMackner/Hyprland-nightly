@@ -82,7 +82,7 @@ cd /builddir/build/BUILD
 cd wlroots-%{githash2}
 /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
 cd /builddir/build/BUILD
-cp -r ./wlroots-%{githash2}/* ./%{name}-%{githash}/subprojects/wlroots/
+cp -r ./wlroots-%{githash2}/* ./%{name}-main/subprojects/wlroots/
 
 %build
 meson -Dprefix=%{_prefix} -Dbuildtype=release _build
