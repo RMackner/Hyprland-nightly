@@ -13,7 +13,7 @@ Summary:        Dynamic tiling Wayland compositor that doesn't sacrifice on its 
 # subprojects/wlroots is MIT
 License:        BSD-3-Clause and MIT
 URL:            https://github.com/hyprwm/Hyprland
-Source0:        %{url}/archive/%{githash}/%{name}-%{githash}.tar.gz
+Source0:        %{url}/archive/refs/heads/main.zip
 Source1:        https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/%{githash2}/wlroots-%{githash2}.tar.gz
 
 BuildRequires:  meson
@@ -76,7 +76,7 @@ very flexible IPC model allowing for a lot of customization, and more.
 
 
 %prep
-%autosetup -n %{name}-%{githash}
+%autosetup -n %{name}-main
 cd /builddir/build/BUILD
 /usr/bin/tar xvf /builddir/build/SOURCES/wlroots-%{githash2}.tar.gz
 cd wlroots-%{githash2}
