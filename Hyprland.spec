@@ -1,4 +1,4 @@
-%define githash c6a3092b45da325ee41e39a76fd527d04580a65e
+%define githash e0bc952c8382992c2e9621865b94c904e728a8c3
 
 %define shorthash %(c=%{githash}; echo ${c:0:10})
 
