@@ -97,8 +97,8 @@ Source0:        %{build_repo}/%{commit}/mesa-%{commit}.tar.gz
 # Fedora opts to ignore the optional part of clause 2 and treat that code as 2 clause BSD.
 Source1:        Mesa-MLAA-License-Clarification-Email.txt
 
-Patch1:         0003-evergreen-big-endian.patch
-Patch2:		0001-workaround-disable-mesa_glthread-for-radeonsi-to-fix.patch
+#Patch1:         0003-evergreen-big-endian.patch
+#Patch2:		0001-workaround-disable-mesa_glthread-for-radeonsi-to-fix.patch
 
 # Disable rgb10 configs by default:
 # https://bugzilla.redhat.com/show_bug.cgi?id=1560481
