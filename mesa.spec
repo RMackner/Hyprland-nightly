@@ -95,7 +95,7 @@ Source0:        %{build_repo}/%{commit}/mesa-%{commit}.tar.gz
 # src/gallium/auxiliary/postprocess/pp_mlaa* have an ... interestingly worded license.
 # Source1 contains email correspondence clarifying the license terms.
 # Fedora opts to ignore the optional part of clause 2 and treat that code as 2 clause BSD.
-Source1:        Mesa-MLAA-License-Clarification-Email.txt
+#Source1:        Mesa-MLAA-License-Clarification-Email.txt
 
 #Patch1:         0003-evergreen-big-endian.patch
 #Patch2:		0001-workaround-disable-mesa_glthread-for-radeonsi-to-fix.patch
@@ -374,7 +374,7 @@ Headers for development with the Vulkan API.
 %prep
 %setup -q -c
 %autosetup -n mesa-%{commit} -p1
-cp %{SOURCE1} docs/
+#cp %{SOURCE1} docs/
 
 %build
 # We've gotten a report that enabling LTO for mesa breaks some games. See
