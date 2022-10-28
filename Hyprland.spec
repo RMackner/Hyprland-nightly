@@ -19,6 +19,7 @@ BuildRequires:  meson
 BuildRequires:  gcc-c++
 BuildRequires:  llvm-devel
 BuildRequires:  clang
+BuildRequires:  llvm
 
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
