@@ -17,6 +17,8 @@ Source0:        0.16.0.tar.gz
 
 BuildRequires:  meson
 BuildRequires:  gcc-c++
+BuildRequires:  llvm-devel
+BuildRequires:  clang
 
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(egl)
