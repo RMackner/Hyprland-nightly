@@ -68,7 +68,7 @@ BuildRequires:  pkgconfig(xwayland)
 BuildRequires:  libdrm-devel
 BuildRequires:  git
 BuildRequires:  clang-devel
-BuldRequires:   llvm-devel
+BuildRequires:   llvm-devel
 
 
 %description
