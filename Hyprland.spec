@@ -1,4 +1,4 @@
-%define githash 83e4006b16e79e747888c507243c37eefabe9790
+%define githash 74d05d0adc14d920aa780b2ca2a51c9ca14fadd7
 
 %define shorthash %(c=%{githash}; echo ${c:0:10})
 
@@ -6,7 +6,7 @@
 
 Name:           Hyprland
 Version:        0.16.0beta
-Release:        10.git.%{shorthash}%{?dist}
+Release:        11.git.%{shorthash}%{?dist}
 Summary:        Dynamic tiling Wayland compositor that doesn't sacrifice on its looks.
 
 # main source code is BSD-3-Clause
