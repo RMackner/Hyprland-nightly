@@ -6,7 +6,7 @@
 
 Name:           Hyprland
 Version:        0.17.0beta
-Release:        1.git.%{shorthash}%{?dist}
+Release:        2.git.%{shorthash}%{?dist}
 Summary:        Dynamic tiling Wayland compositor that doesn't sacrifice on its looks.
 
 # main source code is BSD-3-Clause
