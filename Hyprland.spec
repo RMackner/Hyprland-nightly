@@ -1,4 +1,4 @@
-%define githash 95bbac8791cd0dbd62fc18974a5ba3b91cf61a04
+%define githash 5b548f5bc352a09bf9cf46a8eee0888abbcb2cec
 
 %define shorthash %(c=%{githash}; echo ${c:0:10})
 
@@ -6,7 +6,7 @@
 
 Name:           Hyprland
 Version:        0.17.0beta
-Release:        3.git.%{shorthash}%{?dist}
+Release:        4.git.%{shorthash}%{?dist}
 Summary:        Dynamic tiling Wayland compositor that doesn't sacrifice on its looks.
 
 # main source code is BSD-3-Clause
@@ -76,13 +76,10 @@ very flexible IPC model allowing for a lot of customization, and more.
 
 
 %prep
-%autosetup -n %{name}-%{githash}
-cd /builddir/build/BUILD
+%autosetup -n Hyprland-%{githash}
 /usr/bin/tar xvf /builddir/build/SOURCES/wlroots-%{githash2}.tar.gz
-cd wlroots-%{githash2}
-/usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
-cd /builddir/build/BUILD
-cp -r ./wlroots-%{githash2}/* ./%{name}-%{githash}/subprojects/wlroots/
+/usr/bin/chmod -Rf a+rX,u+w,g-w,o-w /builddir/build/SOURCES/wlroots-%{githash2}
+cp -r /builddir/build/SOURCES/wlroots-%{githash2}/* /builddir/build/SOURCES/Hyprland-%{githash}/subprojects/wlroots/
 
 %build
 meson -Dprefix=%{_prefix} -Dbuildtype=release _build
