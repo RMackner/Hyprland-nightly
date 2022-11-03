@@ -66,7 +66,8 @@ BuildRequires:  pkgconfig(xcb-xinput)
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:  pkgconfig(xwayland)
 BuildRequires:  libdrm-devel
-BuildRequires:  git
+BuildRequires:  clang-devel
+BuildRequires:  llvm-devel
 
 
 %description
@@ -85,13 +86,13 @@ cd /builddir/build/BUILD
 cp -r ./wlroots-%{githash2}/* ./%{name}-%{githash}/subprojects/wlroots/
 
 
+
 %build
-meson -Dprefix=%{_prefix} -Dbuildtype=release _build
-ninja -C _build/
+CC=clang CXX=clang++ meson build-clang
 
 %install
 export DESTDIR=%{buildroot}
-ninja -C _build/ install
+ninja -C build-clang install
 
 # remove wlroots development files
 rm -r %{buildroot}%{_includedir}/wlr
