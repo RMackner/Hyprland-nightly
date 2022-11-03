@@ -33,6 +33,7 @@ BuildRequires:  pkgconfig(wayland-server)
 BuildRequires:  pkgconfig(xcb)
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:  tar
+BuildRequires:  git
 
 # bundled wlroots build requirements
 BuildRequires:  glslang
