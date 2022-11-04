@@ -87,7 +87,7 @@ cd /builddir/build/BUILD
 cp -r ./wlroots-%{githash2}/* ./Hyprland-%{githash}/subprojects/wlroots/
 
 %build
-CC=clang CXX=clang++ -std=c++2b meson build-clang
+CC=clang CXX=clang++ meson build-clang
 ninja -C build-clang
 ninja -C build-clang clean
 meson configure build -Dc_args="-Wno-typedef-redefinition"
