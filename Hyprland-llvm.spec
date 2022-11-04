@@ -84,7 +84,7 @@ cd /builddir/build/BUILD
 cd wlroots-%{githash2}
 /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
 cd /builddir/build/BUILD
-cp -r ./wlroots-%{githash2}/* ./%{name}-%{githash}/subprojects/wlroots/
+cp -r ./wlroots-%{githash2}/* ./Hyprland-%{githash}/subprojects/wlroots/
 
 %build
 CC=clang CXX=clang++ -std=c++2b meson build-clang
