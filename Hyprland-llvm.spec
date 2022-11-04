@@ -78,7 +78,7 @@ very flexible IPC model allowing for a lot of customization, and more.
 
 
 %prep
-%autosetup -n %{name}-%{githash}
+%autosetup -n Hyprland-%{githash}
 cd /builddir/build/BUILD
 /usr/bin/tar xvf /builddir/build/SOURCES/wlroots-%{githash2}.tar.gz
 cd wlroots-%{githash2}
